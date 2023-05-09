@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import FlavonoidsTable from "./components/FlavonoidsTable";
+import GammaTable from "./components/GammaTable";
+import { wineData } from "./utils/wineData";
 
 function App() {
+  // const classes = wineData.map((item) => {
+  //   console.log(item.Alcohol);
+
+  //   return item.Alcohol;
+  // });                                  //was used to get alcohol classs but was not distinct
+  const uniqueClasses = [...new Set(wineData.map((item) => item.Alcohol))]; //this will map the wineData to get alcohol class and new set will make it distinct and will be spread to make available as an array to unique class.
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FlavonoidsTable classes={uniqueClasses} />
+      <GammaTable wineData={wineData} />
     </div>
   );
 }
