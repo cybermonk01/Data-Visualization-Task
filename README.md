@@ -16,7 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-## Data Visualizer [live Link](https://judgeuix)
+## Data Visualizer [live Link](https://data-visualizer-manufac.netlify.app/)
 
 ![image](https://img.shields.io/badge/project-assignment-red)
 
