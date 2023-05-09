@@ -3,6 +3,7 @@ function addGammaProperty(wineData) {
   wineData.forEach((item) => {
     const gamma = (item.Ash * item.Hue) / item.Magnesium;
     item.Gamma = gamma;
+    console.log(item.Gamma);
   });
 
   // Get an array of all the unique classes
@@ -15,6 +16,7 @@ function addGammaProperty(wineData) {
     const gammaValues = wineData
       .filter((item) => item.Alcohol === cls)
       .map((item) => item.Gamma);
+    console.log("valuesssss", gammaValues);
     const mean = getMean(gammaValues);
     const median = getMedian(gammaValues);
     const mode = getMode(gammaValues);
@@ -58,6 +60,7 @@ function getMode(values) {
   let maxFreq = 0;
   for (const [val, freq] of freqMap.entries()) {
     if (freq > maxFreq) {
+      console.log("val-", val, "freq-", freq, "maxFreq-", maxFreq);
       maxFreq = freq;
       mode = val;
     }
